@@ -42,6 +42,8 @@
             label = "D_DOUBLE_D";
             #binding-cells = <0>;
             bindings = <&kp LA(D)>, <&kp LS(LA(D))>;
+
+            tapping-term-ms = <175>;
         };
 
         left_arrow_double_left_arrow: left_arrow_double_left_arrow {
@@ -49,6 +51,8 @@
             label = "LEFT_ARROW_DOUBLE_LEFT_ARROW";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ARROW>, <&kp LA(LEFT_ARROW)>;
+
+            tapping-term-ms = <175>;
         };
 
         right_arrow_double_right_arrow: right_arrow_double_right_arrow {
@@ -56,6 +60,18 @@
             label = "RIGHT_ARROW_DOUBLE_RIGHT_ARROW";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_ARROW>, <&kp LA(RIGHT_ARROW)>;
+
+            tapping-term-ms = <150>;
+        };
+
+        hold_tap_layer: hold_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_LAYER";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
         };
     };
 
@@ -79,10 +95,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E         &kp R     &kp T        &kp Y                 &kp U           &kp I        &kp O    &kp P                   &kp MINUS
-&mt LCTRL ESCAPE  &kp A  &kp S  &kp D         &kp F     &kp G        &kp H                 &kp J           &kp K        &kp L    &colon_semi_colon_swap  &kp SQT
-&kp LSHFT         &kp Z  &kp X  &kp C         &kp V     &kp B        &kp N                 &kp M           &kp COMMA    &kp DOT  &kp FSLH                &kp RIGHT_SHIFT
-                                &kp LEFT_GUI  &kp LALT  &kp SPACE    &delete_shift_delete  &lt_hp 2 ENTER  &lt 1 SLASH
+&kp TAB           &kp Q  &kp W  &kp E         &kp R                &kp T        &kp Y                 &kp U           &kp I        &kp O    &kp P                   &kp MINUS
+&mt LCTRL ESCAPE  &kp A  &kp S  &kp D         &kp F                &kp G        &kp H                 &kp J           &kp K        &kp L    &colon_semi_colon_swap  &kp SQT
+&kp LSHFT         &kp Z  &kp X  &kp C         &kp V                &kp B        &kp N                 &kp M           &kp COMMA    &kp DOT  &kp FSLH                &kp RIGHT_SHIFT
+                                &kp LEFT_GUI  &hold_tap_layer 3 3  &kp SPACE    &delete_shift_delete  &lt_hp 2 ENTER  &lt 1 SLASH
             >;
         };
 
