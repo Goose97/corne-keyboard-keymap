@@ -123,10 +123,10 @@
 
         navigation_layer {
             bindings = <
-&trans  &trans     &trans     &screen_recording  &take_screenshot  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(A)  &kp LA(S)  &d_double_d        &kp LA(F)         &kp LA(G)    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LA(Z)  &kp LA(X)  &kp LA(C)          &kp LA(V)         &kp LA(B)    &trans  &trans  &trans  &trans  &trans  &trans
-                              &trans             &trans            &trans       &trans  &trans  &trans
+&trans  &trans     &trans     &screen_recording  &take_screenshot  &trans       &trans     &trans     &trans     &trans     &trans  &trans
+&trans  &kp LA(A)  &kp LA(S)  &d_double_d        &kp LA(F)         &kp LA(G)    &kp LA(H)  &kp LA(J)  &kp LA(K)  &kp LA(L)  &trans  &trans
+&trans  &kp LA(Z)  &kp LA(X)  &kp LA(C)          &kp LA(V)         &kp LA(B)    &trans     &trans     &trans     &trans     &trans  &trans
+                              &trans             &trans            &trans       &trans     &trans     &trans
             >;
         };
     };
