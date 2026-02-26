@@ -46,24 +46,6 @@
             tapping-term-ms = <175>;
         };
 
-        left_arrow_double_left_arrow: left_arrow_double_left_arrow {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LEFT_ARROW_DOUBLE_LEFT_ARROW";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ARROW>, <&kp LA(LEFT_ARROW)>;
-
-            tapping-term-ms = <175>;
-        };
-
-        right_arrow_double_right_arrow: right_arrow_double_right_arrow {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RIGHT_ARROW_DOUBLE_RIGHT_ARROW";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT_ARROW>, <&kp LA(RIGHT_ARROW)>;
-
-            tapping-term-ms = <150>;
-        };
-
         hold_tap_layer: hold_tap_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_LAYER";
@@ -81,6 +63,13 @@
             #binding-cells = <0>;
             bindings = <&kp LG(LS(NUMBER_4))>;
             label = "TAKE_SCREENSHOT";
+        };
+
+        screen_recording: screen_recording {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_5))>;
+            label = "SCREEN_RECORDING";
         };
     };
 
@@ -110,10 +99,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none   &none  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none           &none                          &none     &none   &none                            &none       &bt BT_CLR
-&none   &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0    &left_arrow_double_left_arrow  &kp DOWN  &kp UP  &right_arrow_double_right_arrow  &none       &bt BT_SEL 0
-&trans  &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none           &none                          &none     &trans  &trans                           &bt BT_PRV  &bt BT_NXT
-                             &trans        &trans        &trans          &trans                         &trans    &trans
+&none   &none  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none           &none     &none     &none   &none      &none       &bt BT_CLR
+&none   &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none       &bt BT_SEL 0
+&trans  &none  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none           &none     &none     &trans  &trans     &bt BT_PRV  &bt BT_NXT
+                             &trans        &trans        &trans          &trans    &trans    &trans
             >;
         };
 
@@ -134,10 +123,10 @@
 
         navigation_layer {
             bindings = <
-&trans  &trans     &trans     &trans       &trans     &trans       &trans  &trans            &trans  &trans  &trans  &trans
-&trans  &kp LA(A)  &kp LA(S)  &d_double_d  &kp LA(F)  &kp LA(G)    &trans  &take_screenshot  &trans  &trans  &trans  &trans
-&trans  &kp LA(Z)  &kp LA(X)  &kp LA(C)    &kp LA(V)  &kp LA(B)    &trans  &trans            &trans  &trans  &trans  &trans
-                              &trans       &trans     &trans       &trans  &trans            &trans
+&trans  &trans     &trans     &screen_recording  &take_screenshot  &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LA(A)  &kp LA(S)  &d_double_d        &kp LA(F)         &kp LA(G)    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LA(Z)  &kp LA(X)  &kp LA(C)          &kp LA(V)         &kp LA(B)    &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans             &trans            &trans       &trans  &trans  &trans
             >;
         };
     };
