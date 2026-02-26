@@ -42,8 +42,6 @@
             label = "D_DOUBLE_D";
             #binding-cells = <0>;
             bindings = <&kp LA(D)>, <&kp LS(LA(D))>;
-
-            tapping-term-ms = <100>;
         };
 
         left_arrow_double_left_arrow: left_arrow_double_left_arrow {
@@ -51,8 +49,6 @@
             label = "LEFT_ARROW_DOUBLE_LEFT_ARROW";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ARROW>, <&kp LA(LEFT_ARROW)>;
-
-            tapping-term-ms = <100>;
         };
 
         right_arrow_double_right_arrow: right_arrow_double_right_arrow {
@@ -60,8 +56,6 @@
             label = "RIGHT_ARROW_DOUBLE_RIGHT_ARROW";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_ARROW>, <&kp LA(RIGHT_ARROW)>;
-
-            tapping-term-ms = <100>;
         };
     };
 
